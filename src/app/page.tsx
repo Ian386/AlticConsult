@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeader } from "@/components/ui/section";
-import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
-import { services, site } from "@/lib/site";
+import { site } from "@/lib/site";
+import { WhatWeDo } from "@/components/site/what-we-do";
 
 export default function HomePage() {
   return (
@@ -40,26 +40,14 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Services preview — full content arrives in Phase 2 */}
+      {/* What we do — interactive service ledger */}
       <Section>
         <SectionHeader
           kicker="What we do"
           title="Four pillars of practical advisory"
           lead="Deep expertise in tax, accounting and regulatory compliance — built to keep your business compliant and positioned for growth."
         />
-        <div className="mt-11 grid gap-5 sm:grid-cols-2">
-          {services.map((s) => (
-            <Card key={s.href} interactive>
-              <h3 className="text-xl">{s.label}</h3>
-              <Link
-                href={s.href}
-                className="text-primary mt-4 inline-flex items-center gap-1.5 text-sm font-semibold hover:gap-2.5"
-              >
-                Explore <ArrowRight className="size-4" aria-hidden />
-              </Link>
-            </Card>
-          ))}
-        </div>
+        <WhatWeDo />
       </Section>
 
       {/* Foundation note (Phase 1) */}

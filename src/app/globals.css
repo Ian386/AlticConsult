@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Altic Consult — Design Tokens
+   Palette A "Emerald Authority" · Type 1 Fraunces + Inter
+   Single source of truth for the design system.
+   ============================================================ */
+
+@theme {
+  /* -- Brand & semantic colors -- */
+  --color-primary: #0f3d2e; /* deep forest — headers, primary surfaces */
+  --color-primary-soft: #14513c; /* hover/elevated primary */
+  --color-accent: #16b86c; /* emerald — CTA fills, icons, borders (NOT text on white) */
+  --color-accent-strong: #0a6b41; /* deep emerald — accent-colored TEXT on light bg (AA, 6.5:1) */
+  --color-accent-press: #0e9d5a; /* pressed/active CTA */
+  --color-accent-ink: #06231a; /* text on accent fills */
+
+  --color-ink: #0c1a14; /* headings / strongest text */
+  --color-body: #33433c; /* body text */
+  --color-muted: #6a7a72; /* secondary text */
+
+  --color-surface: #ffffff; /* base surface */
+  --color-surface-soft: #f4f8f5; /* alt section background */
+  --color-line: #e3ece7; /* borders / dividers */
+
+  /* -- Typography -- */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  /* -- Radius -- */
+  --radius-sm: 0.5rem;
+  --radius: 0.75rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+
+  /* -- Shadows (soft, green-tinted) -- */
+  --shadow-sm: 0 1px 2px rgba(10, 30, 20, 0.06), 0 2px 8px rgba(10, 30, 20, 0.05);
+  --shadow-md: 0 10px 30px -10px rgba(10, 40, 28, 0.25);
+  --shadow-lg: 0 24px 60px -20px rgba(10, 40, 28, 0.3);
+
+  /* -- Motion timings & easing -- */
+  --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-mid: 400ms;
+  --duration-slow: 700ms;
+}
+
+/* ============================================================
+   Base layer
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-surface);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, accessible focus ring everywhere (WCAG 2.2) */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Respect reduced-motion globally */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,7 @@
+.next
+node_modules
+package-lock.json
+public
+docs/phase0-previews
+playwright-report
+test-results

@@ -37,15 +37,66 @@ export type NavItem = {
 };
 
 export const services = [
-  { label: "Tax Advisory & Compliance", href: "/services/tax-advisory-compliance" },
+  {
+    label: "Tax Advisory & Compliance",
+    tag: "Tax",
+    href: "/services/tax-advisory-compliance",
+    blurb:
+      "Navigate Kenya's tax regulations with confidence while minimising risk and exposure.",
+    items: [
+      "Corporate tax advisory",
+      "VAT advisory & compliance",
+      "Withholding tax management",
+      "Tax returns preparation & filing",
+      "PAYE & payroll tax compliance",
+      "KRA audit representation",
+      "Tax dispute resolution",
+      "Transfer pricing advisory",
+      "Cross-border tax advisory",
+      "Tax planning & structuring",
+    ],
+  },
   {
     label: "Accounting & Financial Management",
+    tag: "Accounting",
     href: "/services/accounting-financial-management",
+    blurb:
+      "Build the strong financial systems that reliable decisions and growth depend on.",
+    items: [
+      "Outsourced accounting services",
+      "Financial reporting & management accounts",
+      "Accounting system setup & optimisation",
+      "Payroll management",
+      "Cash flow management",
+      "Internal financial controls",
+    ],
   },
-  { label: "Business Advisory", href: "/services/business-advisory" },
+  {
+    label: "Business Advisory",
+    tag: "Advisory",
+    href: "/services/business-advisory",
+    blurb: "Strategic financial guidance that helps your business grow sustainably.",
+    items: [
+      "Business structuring",
+      "Strategic financial planning",
+      "Financial modelling",
+      "Performance improvement",
+      "Feasibility studies",
+      "Business restructuring",
+    ],
+  },
   {
     label: "Business Setup & Market Entry",
+    tag: "Setup",
     href: "/services/business-setup-market-entry",
+    blurb: "Establish and run a compliant business in Kenya, from incorporation onward.",
+    items: [
+      "Company incorporation",
+      "Tax registration",
+      "Regulatory compliance advisory",
+      "Financial & tax structuring",
+      "Ongoing compliance support",
+    ],
   },
 ] as const;
 
